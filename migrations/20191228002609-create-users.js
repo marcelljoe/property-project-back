@@ -21,13 +21,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       ktp: {
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT(100)
       },
       norek: {
         type: Sequelize.STRING
       },
       notelp: {
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT(100)
       },
       createdAt: {
         allowNull: true,

@@ -23,7 +23,7 @@ exports.register = (req, res) => {
       } else {
         models.users.create({
         nama: req.body.nama,
-        notelp: req.body.phoneNumber,
+        notelp: req.body.notelp,
         email:req.body.email,
         password: hash.generate(req.body.password),
         ktp: req.body.ktp,

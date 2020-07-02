@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const rumah = sequelize.define('rumah', {
-    idlisting: DataTypes.INTEGER,
+  const rumahs = sequelize.define('rumahs', {
+    idlisting: DataTypes.BIGINT(100),
     lt: DataTypes.STRING,
     lb: DataTypes.STRING,
     lantai: DataTypes.STRING,
@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     tahunbuat:DataTypes.INTEGER,
 
   }, {});
-  rumah.associate = function(models) {
+  rumahs.associate = function(models) {
     // associations can be defined here
-    rumah.belongsTo(models.users, {
+    rumahs.belongsTo(models.users, {
       foreignKey: "createdBy_id"
     })
   };
-  return rumah;
+  return rumahs;
 };

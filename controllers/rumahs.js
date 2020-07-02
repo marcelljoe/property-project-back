@@ -1,5 +1,5 @@
 const models = require("../models");
-const rumah = models.rumah;
+const rumahs = models.rumahs;
 const users = models.users;
 const { Op } = require("sequelize");
 
@@ -8,26 +8,26 @@ var endDate = new Date();
 endDate.setDate(new Date().getDate() + 1);
 
 exports.showAll = (req, res) => {
-  rumah.findAll({}).then(rumah => res.send(rumah));
+  rumahs.findAll({}).then(rumahs => res.send(rumahs));
 };
 
 
 exports.insert = (req, res) => {
-  rumah.create(req.body).then(rumah => {
+  rumahs.create(req.body).then(rumahs => {
     res.send({
       message: "success",
-      rumah
+      rumahs
     });
   });
 };
 
 
 exports.detail = (req, res) => {
-  rumah
+  rumahs
     .findOne({
       where: {
         id: req.params.id
       }
     })
-    .then(rumah => res.send(rumah));
+    .then(rumahs => res.send(rumahs));
 };

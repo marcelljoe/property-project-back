@@ -15,7 +15,7 @@ const port = process.env.PORT || 7000;
 const UserController = require("./controllers/users");
 // const EventController = require("./controllers/events");
 // const OrderController = require("./controllers/orders");
-const RumahController = require("./controllers/rumah");
+const RumahController = require("./controllers/rumahs");
 const LoginController = require("./controllers/login");
 const RegistController = require("./controllers/register");
 
@@ -75,6 +75,9 @@ app.group("/propertz/private", router => {
   
   //Regist
   router.post("/register", RegistController.register);
+
+  //Add rumah
+  router.post("/add", RumahController.insert);
 });
 
 //when the nodejs app exed, make it lesten the port
