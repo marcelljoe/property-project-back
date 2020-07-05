@@ -10,7 +10,10 @@ var endDate = new Date();
 endDate.setDate(new Date().getDate() + 1);
 
 exports.showAll = (req, res) => {
-  users.findAll({}).then(users => res.send(users));
+  users.findAll().then(users => res.send({
+    message: "success",
+    users
+  }));
 };
 
 exports.showOne = (req, res) => {
@@ -20,31 +23,34 @@ exports.showOne = (req, res) => {
         id: req.params.id
       }
     })
-    .then(users => res.send(users));
+    .then(users => res.send(users))
+    .catch(err => res.send(err));
 };
 
 exports.editUser = (req, res) => {
     users
       .update(
         {
-          nama: req.body.nama,
-          email: req.body.email,
-          notelp: req.body.phoneNumber,
-          norek: req.body.norek
-        }
-        // req.body
-        ,
+          activated: req.body.activated
+        },
         {
           where: { id: req.params.id }
         }
       )
       .then(users => {
-        const token = jwt.sign({ id: users.id }, "ThisIsTheToken");
-        const nama = req.body.nama;
         res.send({
-          message: "success",
-          nama,
-          token
+          message: "success"  
         });
       });
+}
+
+exports.deleteUser = (req, res) => {
+  users
+  .destroy({
+    where: {id: req.params.id}
+  }).then(users => {
+    res.send({
+      message: "success"
+    });
+  })
 }

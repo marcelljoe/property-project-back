@@ -8,7 +8,7 @@ var endDate = new Date();
 endDate.setDate(new Date().getDate() + 1);
 
 exports.showAll = (req, res) => {
-  rumahs.findAll({}).then(rumahs => res.send(rumahs));
+  rumahs.findAll().then(rumahs => res.send(rumahs));
 };
 
 

@@ -13,7 +13,7 @@ exports.login = (req, res) => {
         const password = users.password;
         const verify = hash.verify(req.body.password, password);
         if (verify === true) {
-          const { id, email, nama, activated } = users;
+          const { activated } = users;
           if (activated == "0") {
             res.send({
               error: true,

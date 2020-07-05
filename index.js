@@ -34,41 +34,9 @@ app.get("/", (req, res) => {
   res.send("Hello Express!");
 });
 
-app.group("/propertz/private/api/v1", router => {
-  // //properties
-  // router.get("/rental", CategoryController.showAll);
-  // router.get("/category/:id", CategoryController.showOne);
-  // router.post("/category", CategoryController.insert);
-  // router.post("/category/:id", CategoryController.update);
-  // router.post("/deletecategory", CategoryController.delete);
-  
-  // //Events
-  // router.get("/events", EventController.showAll);
-  // router.get("/category/:id/events", EventController.showById);
-  // router.get("/eventsbytoday", EventController.showByCurDate);
-  // router.get("/events/:keyword", EventController.search);
-  // router.get("/eventsupcoming", EventController.showUpcoming);
-  // router.get("/event/:id/detail", EventController.detail);
-  // router.post("/addevent", EventController.insert);
-
-  // //Buy things
-  // router.post("/buy", OrderController.buy);
-  // router.post("/paymentpending", OrderController.showPending);  
-  // router.post("/paymentconfirmed", OrderController.showConfirmed);
-  // router.put("/pay/:id", OrderController.pay);
-
-  //Favorites
-  // router.get("/profile/:id/favorites", FavsController.showAll);
-  // router.post("/favorites", FavsController.ShowIsFavorited);
-  // router.post("/dropfavorite", FavsController.deleteFav);
-  // router.post("/addfavorite", FavsController.addFav);
-
-  
-  //UserControl
-  // router.get("/profile/:id", UserController.showOne);
-  // router.put("/profile/:id/edit", UserController.editUser);
+app.group("/propertz/private/api/v1/", router => {
   //House Listing
-  router.get("/rental", RumahController.showAll);
+  router.get("/rumah", RumahController.showAll);
 
   //Login
   router.post("/login", LoginController.login);
@@ -78,6 +46,17 @@ app.group("/propertz/private/api/v1", router => {
 
   //Add rumah
   router.post("/add", RumahController.insert);
+
+
+
+
+  //get user
+  router.get("/admins", UserController.showAll);
+
+  //edit user
+  router.put("/change-user-level/:id", UserController.editUser);
+
+  router.delete("/delete-user/:id", UserController.deleteUser);
 });
 
 //when the nodejs app exed, make it lesten the port

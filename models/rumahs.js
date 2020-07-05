@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     alamat: DataTypes.TEXT,
     sertifikat: DataTypes.STRING,
     tipe: DataTypes.STRING,
-    createdBy_id: DataTypes.INTEGER,
+    imgUrl: DataTypes.TEXT,
     tahunbuat:DataTypes.INTEGER,
+    createdBy_id: DataTypes.INTEGER,
 
   }, {});
   rumahs.associate = function(models) {

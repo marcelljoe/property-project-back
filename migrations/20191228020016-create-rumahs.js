@@ -39,6 +39,12 @@ module.exports = {
     tipe: {
       type: Sequelize.STRING
     },
+    tahunbuat: {
+      type: Sequelize.INTEGER
+    },
+    imgUrl: {
+      type: Sequelize.TEXT
+    },
     createdBy_id: {
       type: Sequelize.INTEGER,
       allowNull: false,
@@ -48,9 +54,6 @@ module.exports = {
       },
       onUpdate: "cascade",
       onDelete: "cascade"
-    },
-    tahunbuat: {
-      type: Sequelize.INTEGER
     },
     createdAt: {
       allowNull: true,
