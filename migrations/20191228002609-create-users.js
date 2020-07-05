@@ -29,6 +29,9 @@ module.exports = {
       notelp: {
         type: Sequelize.BIGINT(100)
       },
+      activated: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: true,
         type: Sequelize.DATE,

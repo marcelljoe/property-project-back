@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
   res.send("Hello Express!");
 });
 
-app.group("/propertz/private", router => {
+app.group("/propertz/private/api/v1", router => {
   // //properties
   // router.get("/rental", CategoryController.showAll);
   // router.get("/category/:id", CategoryController.showOne);

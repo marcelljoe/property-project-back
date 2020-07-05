@@ -12,7 +12,8 @@ module.exports = {
             password: "admin1234531",
             ktp: "12345",
             norek:"1029384756",
-            notelp:"081234568"
+            notelp:"081234568",
+             
           }
         ],
         {}

@@ -29,20 +29,17 @@ exports.register = (req, res) => {
         ktp: req.body.ktp,
         norek: req.body.norek,
         alamat: req.body.alamat,
+        activated: "0",
         createdAt: Date.now(),
         updatedAt: Date.now()
         })
         .then(users => {
-          const token = jwt.sign({ id: users.id }, "ThisIsTheToken");
+          const token = jwt.sign({ id: users.id }, "sihdfbasudfhbsdknasdcuasdcuidncaksducnkadsucnadsucnvkvlzkdncdl");
           const email = users.email;
           const id = users.id;
           const nama = users.nama;
           res.send({
-            message: "success",
-            email,
-            id,
-            nama,
-            token
+            message: "success"
           });
         }).catch(err => {console.log(err)});        
       }

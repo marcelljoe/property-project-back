@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const models = require("../models");
-const rumah = models.rumah;
+const rumahs = models.rumahs;
 const users = models.users;
 const { Op } = require("sequelize");
 
