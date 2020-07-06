@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 app.group("/propertz/private/api/v1/", router => {
   //House Listing
   router.get("/rumah", RumahController.showAll);
+  router.post("/rumah/:id", RumahController.detail);
 
   //Login
   router.post("/login", LoginController.login);
@@ -52,6 +53,7 @@ app.group("/propertz/private/api/v1/", router => {
 
   //get user
   router.get("/admins", UserController.showAll);
+  router.post("/admin/:id", UserController.showOne);
 
   //edit user
   router.put("/change-user-level/:id", UserController.editUser);
