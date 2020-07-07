@@ -31,3 +31,18 @@ exports.detail = (req, res) => {
     })
     .then(rumahs => res.send(rumahs));
 };
+
+
+exports.editRumahImg = (req, res) => {
+  rumahs
+    .update(
+      {
+        imgUrl: req.body.imgUrl
+      },
+      {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(rumahs => res.send(rumahs));
+};
