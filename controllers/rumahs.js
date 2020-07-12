@@ -13,11 +13,19 @@ exports.showAll = (req, res) => {
 
 
 exports.showSewa = (req, res) => {
-  rumahs.findAll({where: {tipe: "Sewa"}}).then(rumahs => res.send(rumahs));
+  rumahs.findOne({
+    where: {
+      tipe: "Sewa"
+    }
+  }).then(rumahs => res.send(rumahs));
 };
 
 exports.showJual = (req, res) => {
-  rumahs.findAll({where: {tipe: "Jual"}}).then(rumahs => res.send(rumahs));
+  rumahs.findAll({
+    where: {
+      tipe: "Jual"
+    }
+  }).then(rumahs => res.send(rumahs));
 };
 
 
