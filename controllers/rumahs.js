@@ -11,9 +11,8 @@ exports.showAll = (req, res) => {
   rumahs.findAll().then(rumahs => res.send(rumahs));
 };
 
-
 exports.showSewa = (req, res) => {
-  rumahs.findOne({
+  rumahs.findAll({
     where: {
       tipe: "Sewa"
     }
