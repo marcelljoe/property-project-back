@@ -62,8 +62,9 @@ app.group("/propertz/private/api/v1/", router => {
   router.post("/admin/:id", UserController.showOne);
 
   //edit user
-  router.put("/change-user-level/:id", UserController.editUser);
-
+  router.put("/change-user-level/:id", UserController.editUserAct);
+  router.put("/edit-user/:id", UserController.editUser);
+  
   router.delete("/delete-user/:id", UserController.deleteUser);
 });
 
