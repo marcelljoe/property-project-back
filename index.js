@@ -37,7 +37,9 @@ app.get("/", (req, res) => {
 app.group("/propertz/private/api/v1/", router => {
   //House Listing
   router.get("/rumah", RumahController.showAll);
-  
+  router.get("/daftar-sewa", RumahController.showSewa);
+  router.get("/daftar-jual", RumahController.showJual);
+
   router.post("/rumah/:id", RumahController.detail);
 
   //Login
