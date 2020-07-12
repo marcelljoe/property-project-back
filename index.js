@@ -49,6 +49,7 @@ app.group("/propertz/private/api/v1/", router => {
   router.post("/add", RumahController.insert);
 
   //Edit rumah
+  router.put("/rumah.edit/:id", RumahController.editRumah)
   router.put("/edit-img/:id", RumahController.editRumahImg)
 
 
