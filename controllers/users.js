@@ -1,9 +1,9 @@
 const jwt = require("jsonwebtoken");
-
 const models = require("../models");
 const rumahs = models.rumahs;
 const users = models.users;
 const { Op } = require("sequelize");
+const hash = require("password-hash");
 
 var startDate = new Date();
 var endDate = new Date();
@@ -27,7 +27,7 @@ exports.showOne = (req, res) => {
     .catch(err => res.send(err));
 };
 
-exports.editUser = (req, res) => {
+exports.editUserAct = (req, res) => {
     users
       .update(
         {
@@ -42,6 +42,32 @@ exports.editUser = (req, res) => {
           message: "success"  
         });
       });
+}
+
+exports.editUser = (req, res) => {
+  users
+    .update(
+      {
+        nama: req.body.nama,
+        alamat: req.body.alamat,
+        email: req.body.email,
+        password: hash.generate(req.body.password),
+        ktp: req.body.ktp,
+        norek: req.body.norek,
+        notelp: req.body.notelp,
+        activated: req.body.activated,
+        updatedAt: Date.now()
+       },
+      {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(users => {
+      res.send({
+        message: "success"  
+      });
+    });
 }
 
 exports.deleteUser = (req, res) => {
