@@ -13,11 +13,11 @@ exports.showAll = (req, res) => {
 
 
 exports.showSewa = (req, res) => {
-  rumahs.findAll({where: {type: "Sewa"}}).then(rumahs => res.send(rumahs));
+  rumahs.findAll({where: {tipe: "Sewa"}}).then(rumahs => res.send(rumahs));
 };
 
 exports.showJual = (req, res) => {
-  rumahs.findAll({where: {type: "Jual"}}).then(rumahs => res.send(rumahs));
+  rumahs.findAll({where: {tipe: "Jual"}}).then(rumahs => res.send(rumahs));
 };
 
 
