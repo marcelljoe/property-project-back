@@ -12,6 +12,15 @@ exports.showAll = (req, res) => {
 };
 
 
+exports.showSewa = (req, res) => {
+  rumahs.findAll({where: {type: "Sewa"}}).then(rumahs => res.send(rumahs));
+};
+
+exports.showJual = (req, res) => {
+  rumahs.findAll({where: {type: "Jual"}}).then(rumahs => res.send(rumahs));
+};
+
+
 exports.insert = (req, res) => {
   rumahs.create(req.body).then(rumahs => {
     res.send({
