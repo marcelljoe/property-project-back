@@ -55,7 +55,6 @@ exports.editUser = (req, res) => {
         ktp: req.body.ktp,
         norek: req.body.norek,
         notelp: req.body.notelp,
-        activated: req.body.activated,
         updatedAt: Date.now()
        },
       {
