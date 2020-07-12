@@ -55,7 +55,7 @@ app.group("/propertz/private/api/v1/", router => {
   router.put("/rumah/edit/:id", RumahController.editRumah)
   router.put("/edit-img/:id", RumahController.editRumahImg)
 
-
+  router.delete("rumah-destroy/:id", RumahController.deleteRumah)
 
   //get user
   router.get("/admins", UserController.showAll);

@@ -67,7 +67,7 @@ exports.editRumah = (req, res) => {
   rumahs
     .update(
       {
-        idlisting: req.body.idListing,
+        idlisting: req.body.idlisting,
         lt: req.body.lt,
         lb: req.body.lb,
         lantai: req.body.lantai,
@@ -85,5 +85,20 @@ exports.editRumah = (req, res) => {
         id: req.params.id
       }
     })
-    .then(rumahs => res.send(rumahs));
+    .then(rumahs => {
+      res.send({
+        message: "success"
+      });
+    })
 };
+
+exports.deleteRumah = (req, res) => {
+  rumahs
+  .destroy({
+    where: {id: req.params.id}
+  }).then(rumahs => {
+    res.send({
+      message: "success"
+    });
+  })
+}
