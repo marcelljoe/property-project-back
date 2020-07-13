@@ -11,6 +11,16 @@ exports.showAll = (req, res) => {
   rumahs.findAll().then(rumahs => res.send(rumahs));
 };
 
+exports.showAllById = (req, res) => {
+  rumahs.findAll(
+    {
+      where: {
+        createdBy_id: req.params.id
+      }
+    }
+  ).then(rumahs => res.send(rumahs));
+};
+
 exports.showSewa = (req, res) => {
   rumahs.findAll({
     where: {
