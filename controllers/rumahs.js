@@ -18,7 +18,11 @@ exports.showAllById = (req, res) => {
         createdBy_id: req.params.id
       }
     }
-  ).then(rumahs => res.send(rumahs));
+  ).then(rumahs => res.send(rumahs))
+  .catch(err => res.send({
+    err,
+    message: "Error di verify."
+  }));
 };
 
 exports.showSewa = (req, res) => {
