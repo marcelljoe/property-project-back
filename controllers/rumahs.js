@@ -19,9 +19,9 @@ exports.showAllById = (req, res) => {
       }
     }
   ).then(rumahs => res.send(rumahs))
-  .catch(err => res.send({
-    err,
-    message: "Error di verify."
+  .catch(error => res.send({
+    error,
+    message: "Error"
   }));
 };
 
